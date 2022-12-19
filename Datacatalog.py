@@ -21,7 +21,6 @@ from PIL import Image
 # パラメーター設定 
 ##################################################
 current_path = os.path.dirname(os.path.abspath(__file__))
-basename_without_ext = os.path.splitext(os.path.basename(os.path.basename(__file__)))[0]
 snow_image = os.path.join(current_path, 'Snowflake.png')
 
 ##################################################
@@ -29,7 +28,7 @@ snow_image = os.path.join(current_path, 'Snowflake.png')
 ##################################################
 # ページ設定
 st.set_page_config(
-	page_title=basename_without_ext,
+	page_title="データカタログ",
 	page_icon="❄"
 	, layout="wide"
 )
