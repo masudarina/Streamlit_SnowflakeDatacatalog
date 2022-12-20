@@ -1,15 +1,15 @@
---------------------------------------------------
-	前提条件
---------------------------------------------------
+
+# Snowflake データカタログ
+
+## 前提条件
 ・Streamlit Cloud が使用できること
 　アカウント作成ページ：https://share.streamlit.io/signup
 
 ・Githubのソースが確認できること
 　https://github.com/masudarina/Streamlit_SnowflakeDatacatalog
 
---------------------------------------------------
-	設定手順
---------------------------------------------------
+## 設定手順
+
 ・Streamlit Cloud アプリデプロイ設定手順
 
 	1. Streamlit Cloud アプリ作成画面の「New app」をクリックする
@@ -30,9 +30,8 @@
 	参考サイト：
 	https://docs.streamlit.io/streamlit-cloud/get-started/share-your-app
 
---------------------------------------------------
-	使用手順
---------------------------------------------------
+## 使用手順
+
 1. Streamitからの招待メールを開き、「Accept invite and visit app」を押下する
 	参考サイト：
 	https://docs.streamlit.io/streamlit-cloud/get-started/share-your-app
@@ -50,4 +49,3 @@
 	※ツール確認用URL：
 	https://masudarina-st-snowflake-checkwarehousestool-v20220729-01-qam7kk.streamlitapp.com/
 
---以上--
