@@ -5,9 +5,6 @@
 ・Streamlit Cloud が使用できること
 　アカウント作成ページ：https://share.streamlit.io/signup
 
-・Githubのソースが確認できること
-　https://github.com/masudarina/Streamlit_SnowflakeDatacatalog
-
 ## 設定手順
 
 ・Streamlit Cloud アプリデプロイ設定手順
