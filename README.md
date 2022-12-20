@@ -6,15 +6,19 @@ Snowflake データカタログは、Snowflakeのデータを収集し可視化�
 
 ## 前提条件
 ・Streamlit Cloud が使用できること
+
 　アカウント作成ページ：https://share.streamlit.io/signup
 
 ・Git Hub アカウントを所持していること
+
 　アカウント作成ページ：https://www.winschool.jp/download/online/text/guide_regist_github.pdf
 
 ・Git Hub に専用のリポジトリが存在すること
+
 　参考サイト：https://docs.github.com/ja/get-started/quickstart/create-a-repo
 
 ・Git Hub 専用のリポジトリが「PUBLIC」設定になっていること
+
 　参考サイト：https://yu-report.com/entry/githubprivate/
 
 ## 設定手順
