@@ -1,5 +1,6 @@
 
 # Snowflake データカタログ
+Snowflake データカタログは、Snowflakeのデータを収集し可視化するツールです。
 
 ## 前提条件
 ・Streamlit Cloud が使用できること
