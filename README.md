@@ -1,5 +1,7 @@
 
 # Snowflake データカタログ
+
+## 概要
 Snowflake データカタログは、Snowflakeのデータを収集し可視化するツールです。
 
 ## 前提条件
