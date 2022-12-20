@@ -50,3 +50,6 @@ Snowflake データカタログは、Snowflakeのデータを収集し可視化�
 	※ツール確認用URL：
 	https://masudarina-st-snowflake-checkwarehousestool-v20220729-01-qam7kk.streamlitapp.com/
 
+
+新規作成　2022/12/19
+
