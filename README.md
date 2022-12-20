@@ -63,7 +63,7 @@ Snowflake データカタログは、Snowflakeのデータを収集し可視化�
 
 	2. 「Paste GitHub URL」をクリックする
 
-	3. 専用のGit HubのpythonファイルのURLを貼り、「Deploy!」をクリックする
+	3. 専用のGit Hubのpythonファイルを開いた際のURLを貼り、「Deploy!」をクリックする
 	URL例：
 	https://github.com/masudarina/streamlit/blob/main/Datacatalog.py
 
