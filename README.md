@@ -24,7 +24,7 @@ Snowflake データカタログは、Snowflakeのデータを収集し可視化�
 ## 設定手順
 ・Git Hub 設定手順
 
-	1. 上記のファイルをすべてダウンロードする
+	1. 上記リポジトリ内のファイルをすべてダウンロードする
 	
 
 	2. 専用のリポジトリに以下のファイルを配置する
@@ -63,7 +63,7 @@ Snowflake データカタログは、Snowflakeのデータを収集し可視化�
 
 	2. 「Paste GitHub URL」をクリックする
 
-	3. 専用のGit HubのリポジトリURLを貼り、「Deploy!」をクリックする
+	3. 専用のGit HubのpythonファイルのURLを貼り、「Deploy!」をクリックする
 	URL例：
 	https://github.com/masudarina/streamlit/blob/main/Datacatalog.py
 
