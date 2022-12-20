@@ -8,7 +8,48 @@ Snowflake データカタログは、Snowflakeのデータを収集し可視化�
 ・Streamlit Cloud が使用できること
 　アカウント作成ページ：https://share.streamlit.io/signup
 
+・Git Hub アカウントを所持していること
+　アカウント作成ページ：https://www.winschool.jp/download/online/text/guide_regist_github.pdf
+
+・Git Hub に専用のリポジトリが存在すること
+　参考サイト：https://docs.github.com/ja/get-started/quickstart/create-a-repo
+
+・Git Hub 専用のリポジトリが「PUBLIC」設定になっていること
+　参考サイト：https://yu-report.com/entry/githubprivate/
+
 ## 設定手順
+・Git Hub 設定手順
+	1. 上記のファイルをすべてダウンロードする
+
+	2. 専用のリポジトリに以下のファイルを配置する
+
+		配置するファイル：
+		・Datacatalog.py
+		・Snowflake.png
+		・requirements.txt
+
+		配置後のディレクトリ構成図の例：
+		<リポジトリ名>/
+		　├ Datacatalog.py
+		　├ Snowflake.png
+		　└ requirements.txt
+
+	3. 専用のリポジトリに「.streamlit」フォルダを作成する
+	参考サイト：
+	https://yoshitaku-jp.hatenablog.com/entry/2018/07/07/225642
+
+	4. 「.streamlit」フォルダに以下のファイルを配置する
+
+		配置するファイル：
+		・config.toml
+
+		配置後のディレクトリ構成図の例：
+		<リポジトリ名>/
+		　├ Datacatalog.py
+		　├ Snowflake.png
+		　├ .streamlit/
+		　│　└ config.toml
+		　└ requirements.txt
 
 ・Streamlit Cloud アプリデプロイ設定手順
 
@@ -16,9 +57,9 @@ Snowflake データカタログは、Snowflakeのデータを収集し可視化�
 
 	2. 「Paste GitHub URL」をクリックする
 
-	3. 下記のURLを貼り、「Deploy!」をクリックする
-	URL：
-	https://github.com/masudarina/Streamlit_SnowflakeDatacatalog/blob/main/Datacatalog.py
+	3. 専用のGit HubのリポジトリURLを貼り、「Deploy!」をクリックする
+	URL例：
+	https://github.com/masudarina/streamlit/blob/main/Datacatalog.py
 
 ・Streamlit Cloud アプリ共有設定手順
 
@@ -29,6 +70,7 @@ Snowflake データカタログは、Snowflakeのデータを収集し可視化�
 	2. 「Invite viewers by email」に閲覧者のメールアドレスを記入し、「Save」をクリックする
 	参考サイト：
 	https://docs.streamlit.io/streamlit-cloud/get-started/share-your-app
+
 
 ## 使用手順
 
