@@ -21,6 +21,7 @@ from PIL import Image
 # パラメーター設定 
 ##################################################
 current_path = os.path.dirname(os.path.abspath(__file__))
+basename_without_ext = os.path.splitext(os.path.basename(os.path.basename(__file__)))[0]
 snow_image = os.path.join(current_path, 'Snowflake.png')
 
 ##################################################
@@ -28,7 +29,7 @@ snow_image = os.path.join(current_path, 'Snowflake.png')
 ##################################################
 # ページ設定
 st.set_page_config(
-	page_title="データカタログ",
+	page_title=basename_without_ext,
 	page_icon="❄"
 	, layout="wide"
 )
@@ -264,22 +265,23 @@ def dispdispMainPageDetailTableInfo(cs):
 		+ '''\' IN SCHEMA ''' + st.session_state["データベース選択"] + '''.''' + st.session_state["スキーマ名"])
 
 	# テーブル情報取得
+
 	tableinfo_result = cs.execute('''
 		SELECT * FROM TABLE(RESULT_SCAN(LAST_QUERY_ID())) \
 		WHERE "name" = ''' + '''\'''' + st.session_state["テーブル名"] + '''\'''')
 
 	# テーブル情報をDataframeに代入
 	df_tableinfo = pd.DataFrame(tableinfo_result, 
-		columns = ["作成日時", "テーブル名", "データベース" ,"スキーマ" ,"種類" ,"コメント" ,"cluster_by" ,\
-			"レコード数" ,"データ量（bytes）" ,"所有者" ,"データ保持期間(日)" ,"自動クラスタリング" ,\
-			"change_tracking" ,"search_optimization" ,"search_optimization_progress" ,\
-			"search_optimization_bytes", "is_external"])
+	columns = ["作成日時", "テーブル名", "データベース" ,"スキーマ" ,"種類" ,"コメント" ,"cluster_by" ,\
+		"レコード数" ,"データ量（bytes）" ,"所有者" ,"データ保持期間(日)" ,"自動クラスタリング" ,\
+		"change_tracking" ,"search_optimization" ,"search_optimization_progress" ,\
+		"search_optimization_bytes", "is_external"])
 
 	# 画面への表示順を並び替え
 	df_tableinfo = df_tableinfo[["テーブル名","データベース","スキーマ","所有者","レコード数",\
-		"データ量（bytes）","作成日時","コメント","データ保持期間(日)","自動クラスタリング", \
-		"cluster_by" ,"change_tracking" ,"search_optimization" ,"search_optimization_progress" ,\
-		"search_optimization_bytes", "is_external"]]
+	"データ量（bytes）","作成日時","コメント","データ保持期間(日)","自動クラスタリング", \
+	"cluster_by" ,"change_tracking" ,"search_optimization" ,"search_optimization_progress" ,\
+	"search_optimization_bytes", "is_external"]]
 
 	# 作成日時カラムの形式変換
 	df_tableinfo['作成日時'] = pd.to_datetime(df_tableinfo['作成日時'])
@@ -287,8 +289,8 @@ def dispdispMainPageDetailTableInfo(cs):
 
 	# テーブル表示
 	st.table(df_tableinfo.T.reset_index().rename(columns={"index":"項目", 0:"設定値"}).style.set_table_styles(
-		[{"selector": "th", "props": [("background-color", "#f0f8ff"), ("color", "black"), \
-		("font-weight", "bold"), ("text-align", "center")]}]
+	[{"selector": "th", "props": [("background-color", "#f0f8ff"), ("color", "black"), \
+	("font-weight", "bold"), ("text-align", "center")]}]
 	))
 
 ###################################################
@@ -559,15 +561,18 @@ def dispMainPage():
 
 	st.title("データカタログ")
 
-	if dispdispMainPageDetailTableInfo(cs) == False:
-		st.error("テーブル基本情報表示を表示できません")
-		pass 
-	if dispdispMainPageDetailColumns(cs) == False:
-		st.error("カラム詳細がありません")
-		pass		 
-	if dispdispMainPageDetailColumnInfo(cs) == False:
-		st.error("テーブル基本情報表示を表示できません")
-		pass 
+	try:
+		dispdispMainPageDetailTableInfo(cs)
+	except snowflake.connector.errors.ProgrammingError:
+		st.error("テーブルを表示できません。デフォルトのロール、またはウェアハウスが設定されていることを確認してください。")
+		pass
+	else: 
+		if dispdispMainPageDetailColumns(cs) == False:
+			st.error("カラム詳細がありません")
+			pass		 
+		if dispdispMainPageDetailColumnInfo(cs) == False:
+			st.error("テーブル基本情報表示を表示できません")
+			pass 
 
 ###################################################
 # 関数名：dispSidePage　
