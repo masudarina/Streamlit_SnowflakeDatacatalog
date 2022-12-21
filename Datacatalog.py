@@ -565,7 +565,7 @@ def dispMainPage():
 		dispdispMainPageDetailTableInfo(cs)
 	except snowflake.connector.errors.ProgrammingError:
 		st.error("テーブルを表示できません。デフォルトのロール、またはウェアハウスが設定されていることを確認してください。")
-		pass
+		st.button('''戻る''', on_click=returnPrevPage, help = "ユーザー名、ロール、アカウントを変更する")
 	else: 
 		if dispdispMainPageDetailColumns(cs) == False:
 			st.error("カラム詳細がありません")
