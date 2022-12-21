@@ -69,7 +69,7 @@ Snowflake データカタログは、Snowflakeのデータを収集し可視化�
 
 ・Streamlit Cloud アプリ共有設定手順
 
-	1. Streamlit Cloud アプリ作成画面を開き、共有したいアプリの３点リーダーをクリックする
+	1. 自身のアカウントでStreamlit Cloud アプリ作成画面を開き、共有したいアプリの３点リーダーをクリックする
 
 	2. 「Settings」＞「Sharing」をクリックする
 
