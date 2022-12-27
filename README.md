@@ -95,9 +95,4 @@ Snowflake データカタログは、Snowflakeのデータを収集し可視化�
 	ロール : ユーザーにデフォルトのロールが設定されていない場合は、使用するロールを記入
 	ウェアハウス : ユーザーにデフォルトのロールが設定されていない場合は、使用するロールを記入
 
-	※ツール確認用URL：
-	https://masudarina-st-snowflake-checkwarehousestool-v20220729-01-qam7kk.streamlitapp.com/
-
-
 新規作成　2022/12/19
-
