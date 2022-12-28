@@ -17,7 +17,6 @@ from PIL import Image
 ##################################################
 current_path = os.path.dirname(os.path.abspath(__file__))
 basename_without_ext = os.path.splitext(os.path.basename(os.path.basename(__file__)))[0]
-snow_image = os.path.join(current_path, 'Snowflake.png')
 
 ##################################################
 # 変数設定
@@ -727,8 +726,6 @@ def dispSidePage():
 					st.write(" ")
 					st.write(" ")
 					# アカウント名表示
-					image = Image.open(snow_image)
-					st.image(image, use_column_width=False)
 					st.caption("アカウント名")
 					st.caption(sf_account)
 					st.caption("ユーザー名")
